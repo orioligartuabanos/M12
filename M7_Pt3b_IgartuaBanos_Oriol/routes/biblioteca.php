@@ -26,6 +26,7 @@ Route::get('/welcome', [DefaultController::class, 'welcome']);
 Route::get('/exemple', [DefaultController::class, 'exemple']);
 
 //Route for books
+Route::post('cerca', [LlibreController::class,'Search'])->name('llibre_cerca');
 
 Route::get('/llibre/list', [LlibreController::class, 'list'])->name('llibre_list');
 Route::middleware('auth')->group(function () {
@@ -46,3 +47,7 @@ Route::match(['get', 'post'],'/autor/edit/{id}', [AutorController::class, 'edit'
 
 //Cookie
 Route::get('/default/esborrarCookie', [DefaultController::class, 'esborrarCookie'])->name('default_esborrarCookie');
+
+
+
+

@@ -12,6 +12,7 @@ class Autor extends Model
     public function nomCognoms(){
         return $this->nom . ' ' . $this->cognoms;
     }
+  
     public function llibre()
     {
         return $this->hasMany(Llibre::class);
@@ -19,5 +20,5 @@ class Autor extends Model
     foreach ($llibres as $llibre) {
   
     }
-
+    
 }}

@@ -25,6 +25,7 @@
            
 
             <th>Autor</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -40,8 +41,16 @@
             </td>
         </tr>
         @endforeach
+        
     </tbody>
 </table>
-
+<div>
+            <form method="post" action="{{route('llibre_cerca')}}" >
+                @csrf
+        <label for="ctitol">Cerca Titol</label>
+        <input type="required" name="cerca"></input>
+        <button type="submit">Cerca</button>
+            </form>
+        </div>
 <br>
 @endsection

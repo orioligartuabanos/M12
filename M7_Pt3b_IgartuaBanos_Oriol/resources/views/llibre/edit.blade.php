@@ -33,6 +33,7 @@
                 @endforeach
             </select>
         </div>
+       
         <button type="submit">Edita Llibre</button>
     </form>
 </div>

@@ -60,6 +60,15 @@ class LlibreController extends BaseController
         ]);
     }
 
+    public function Search(Request $request)
+    {$search = $request->get('cerca');
+        //echo $search; exit;
+      $lli = Llibre::where('titol','like','%'.$search.'%')->get();;
+      return view('llibre.list',['llibres' => $lli]);
+      
+    }
+ 
+
     function edit(Request $request, $id)
 
     {
@@ -70,6 +79,7 @@ class LlibreController extends BaseController
             $llibre->dataP = $request->dataP;
             $llibre->vendes = $request->vendes;
             $llibre->autor_id = $request->autor_id;
+
             $validated = $request->validate([
                 'titol' => 'required|min:2|max:20',
                 'vendes' => 'required',
